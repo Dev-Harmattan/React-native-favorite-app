@@ -5,8 +5,8 @@ import {
   useCameraPermissions,
   PermissionStatus,
 } from 'expo-image-picker';
-import { Colors } from '../constants/colors';
-import { OutlineButton } from './UI/OutlineButton';
+import { Colors } from '../../constants/colors';
+import { OutlineButton } from '../UI/OutlineButton';
 
 export const ImagePicker = () => {
   const [imageUri, setImageUri] = useState('');
@@ -19,7 +19,7 @@ export const ImagePicker = () => {
     if (permissionInformation.status === PermissionStatus.DENIED) {
       Alert.alert(
         'Insufficient Permission',
-        'Your need to grant camera permission to use this app.'
+        'You need to grant camera permission to use this app.'
       );
       return false;
     }
