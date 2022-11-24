@@ -1,4 +1,5 @@
 import {View, Text} from 'react-native'
+import { PlaceList } from '../components/PlaceList'
 export const AllPlaces = () => {
-  return <Text>All Places</Text>
+  return <PlaceList />
 }
