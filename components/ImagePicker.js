@@ -6,6 +6,7 @@ import {
   PermissionStatus,
 } from 'expo-image-picker';
 import { Colors } from '../constants/colors';
+import { OutlineButton } from './UI/OutlineButton';
 
 export const ImagePicker = () => {
   const [imageUri, setImageUri] = useState('');
@@ -26,7 +27,7 @@ export const ImagePicker = () => {
   };
   const imagePickHandler = async () => {
     const hasPermission = await verifyPermission();
-    console.log(hasPermission);
+
     if (!hasPermission) return;
 
     const image = await launchCameraAsync({
@@ -46,7 +47,9 @@ export const ImagePicker = () => {
   return (
     <View>
       <View style={styles.imagePreview}>{imagePreview}</View>
-      <Button title="Take Image" onPress={imagePickHandler} />
+      <OutlineButton icon="camera" onPress={imagePickHandler}>
+        Take Image
+      </OutlineButton>
     </View>
   );
 };
